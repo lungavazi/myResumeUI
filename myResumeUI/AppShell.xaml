@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="myResumeUI.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:myResumeUI.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+        <ShellContent
+            Title="About"
+            ContentTemplate="{DataTemplate views:AboutPage}"
+            Icon="male_user" />
+        <ShellContent
+            Title="Academics"
+            ContentTemplate="{DataTemplate views:AcademicsPage}"
+            Icon="student_male" />
+        <ShellContent
+            Title="Work History"
+            ContentTemplate="{DataTemplate views:WorkHistoryPage}"
+            Icon="organization" />
+    </TabBar>
+</Shell>

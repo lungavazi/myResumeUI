@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="myResumeUI.Views.AboutPage"
+             Title="">
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem Text="Add" IconImageSource="{FontImage Glyph='Pencil', Color=White, Size=22}" />-->
+        <ToolbarItem Text="Add" IconImageSource="{}" Command="{Binding EditAboutMeCommand}"/>
+    </ContentPage.ToolbarItems> 
+    <ScrollView Margin="20">
+        
+    <VerticalStackLayout>
+                <Image Source="gym.jpeg"
+               HeightRequest="150" HorizontalOptions="Center"/>
+            <TableView Intent="Menu">
+                <TableRoot >
+                    <TableSection Title="">
+                        <TextCell Text="Title"
+                      Detail="{Binding title}" />
+                        <TextCell Text="Name"
+                      Detail="{Binding name}" />
+                        <TextCell Text="Surname"
+                      Detail="{Binding surname}" />
+                        <TextCell Text="Email"
+                        Detail="{Binding email}" />
+                        <TextCell Text="Phone number"
+                      Detail="{Binding telephone}" />
+                        <TextCell Text="Physical address."
+                      Detail="{Binding address}" />
+                    <SwitchCell Text="Active"
+                        On="{Binding isProfileActive}" />
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </VerticalStackLayout>      
+    </ScrollView>
+    
+</ContentPage>

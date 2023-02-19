@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="myResumeUI.Views.WorkHistoryPage"
+             Title="Work History">
+    <!--<ContentPage.BindingContext>
+        <WorkHistoryViewModel/>
+    </ContentPage.BindingContext>-->
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" IconImageSource="{FontImage Glyph='+', Color=White, Size=22}" Command="{Binding AddHistoryCommand}"/>
+    </ContentPage.ToolbarItems>
+    <VerticalStackLayout>
+        <CollectionView x:Name="academicsCollection"
+                        ItemsSource="{Binding WorkHistory}" EmptyView="No work history to display"
+                        Margin="20"
+                        SelectionMode="Single" SelectedItems="{Binding SelectedWork, Mode=TwoWay}">
+
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Label Text="{Binding position}" FontSize="22" TextColor="Black"/>
+                        <Label Text="{Binding companyName}" FontSize="14" TextColor="Grey"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
